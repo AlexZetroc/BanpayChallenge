@@ -95,5 +95,5 @@
 **To run the tests just use the next command**
 
   ```sh
-  docker-compose run tests
+  docker-compose run test
   ```
