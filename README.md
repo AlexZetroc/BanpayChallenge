@@ -9,11 +9,6 @@
 
     git clone https://github.com/AlexZetroc/BanpayChalenge.git
 
-**Create and activate a Virtual Environment**
-
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-
 ## Docker Setup
 
     run the next command:
