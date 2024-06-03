@@ -89,3 +89,11 @@
 
 - Example calling api using GET method on studio ghibli
   ![Example image](images/getstudioghibliapi.png)
+
+## Running tests
+
+** To run the tests just use the next command**
+
+  ```sh
+  docker-compose run tests
+  ```
