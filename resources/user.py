@@ -10,7 +10,7 @@ parser.add_argument('role', type=str, required=True, help="Role cannot be blank!
 class UserResource(Resource):
     def get(self, user_id=None):
         if user_id:
-            user = User.query.get(user_id)
+            user = db.session.get(User, user_id)
             if user:
                 return {'id': user.id, 'username': user.username, 'role': user.role}, 200
             return {'message': 'User not found'}, 404
@@ -28,7 +28,7 @@ class UserResource(Resource):
 
     def put(self, user_id):
         data = parser.parse_args()
-        user = User.query.get(user_id)
+        user = db.session.get(User, user_id)
         if user:
             user.username = data['username']
             user.role = data['role']
@@ -38,7 +38,7 @@ class UserResource(Resource):
 
     def delete(self, user_id=None):
         if user_id:
-            user = User.query.get(user_id)
+            user = db.session.get(User, user_id)
             if user:
                 db.session.delete(user)
                 db.session.commit()
@@ -50,7 +50,7 @@ class UserResource(Resource):
 
 class UserGhibliResource(Resource):
     def get(self, user_id):
-        user = User.query.get(user_id)
+        user = db.session.get(User, user_id)
         if user:
             data, status_code = fetch_data_by_role(user.role)
             return data, status_code

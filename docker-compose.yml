@@ -7,3 +7,13 @@ services:
       - "5000:5000"
     environment:
       FLASK_ENV: development
+    volumes:
+      - .:/app
+    command: flask run
+  test:
+    build: .
+    environment:
+      FLASK_ENV: testing
+    volumes:
+      - .:/app
+    command: python -m unittest discover -s tests
