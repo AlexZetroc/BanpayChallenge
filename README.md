@@ -38,18 +38,27 @@
       "role": "films"
     }'
     ```
+- Example creating admin
+  ![Example image](images/createuser1.png)
+
 
 - **Get All Users**
 
     ```sh
     curl -X GET http://localhost:5000/users
     ```
+  
+- Example getting users
+  ![Example image](images/getusers.png)
 
 - **Get Specific User**
 
     ```sh
     curl -X GET http://localhost:5000/users/1
     ```
+  
+- Example getting specific user
+  ![Example image](images/getindividualuser.png)
 
 - **Update User**
 
@@ -59,15 +68,24 @@
       "role": "people"
     }'
     ```
+  
+- Example updating user
+  ![Example image](images/updateuser.png)
 
 - **Delete User**
 
     ```sh
     curl -X DELETE http://localhost:5000/users/1
     ```
+  
+- Example deleting user
+  ![Example image](images/deleteuser.png)
 
 - **Get Studio Ghibli Data for User**
 
     ```sh
     curl -X GET http://localhost:5000/users/1/ghibli
     ```
+
+- Example calling api using GET method on studio ghibli
+  ![Example image](images/getstudioghibliapi.png)
